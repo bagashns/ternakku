@@ -46,6 +46,19 @@ const LABEL: Record<string, string> = {
   Feed_Quantity_kg: "jumlah pakan",
   Water_Intake_L: "konsumsi air",
   Housing_Score: "kualitas kandang",
+  Lactation_Stage_Early: "fase awal menyusui",
+  Lactation_Stage_Mid: "fase tengah menyusui",
+  Lactation_Stage_Late: "fase akhir menyusui",
+  Season_Autumn: "musim gugur",
+  Season_Monsoon: "musim hujan",
+  Season_Spring: "musim semi",
+  Season_Summer: "musim panas",
+  Season_Winter: "musim dingin",
+  Management_System_Extensive: "pemeliharaan ekstensif",
+  Management_System_Intensive: "pemeliharaan intensif",
+  Management_System_Mixed: "pemeliharaan campuran",
+  Management_System_Pastoral: "pemeliharaan gembala",
+  Management_System_Semi_Intensive: "pemeliharaan semi-intensif",
 };
 
 const ACTION = {
@@ -99,10 +112,13 @@ export function computeRisk(r: RiskInput): RiskOutput {
   let pos = order.filter(([c]) => c > 0);
   if (pos.length === 0) pos = [[Math.abs(order[0][0]), order[0][1]]];
   const total = pos.reduce((a, [c]) => a + c, 0) || 1;
-  const top_factors = pos.map(([c, i]) => ({
-    faktor: LABEL[names[i]] ?? names[i].replaceAll("_", " "),
-    kontribusi: Math.round((c / total) * 100) / 100,
-  }));
+  // faktor dengan kontribusi di bawah 1% tidak ditampilkan, tetapi minimal dua faktor dipertahankan
+  const top_factors = pos
+    .map(([c, i]) => ({
+      faktor: LABEL[names[i]] ?? names[i].replaceAll("_", " "),
+      kontribusi: Math.round((c / total) * 100) / 100,
+    }))
+    .filter((f, idx) => idx < 2 || f.kontribusi >= 0.01);
 
   const level = p >= MODEL.thresholds.tinggi ? "Tinggi" : p >= MODEL.thresholds.sedang ? "Sedang" : "Rendah";
   return {

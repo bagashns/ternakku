@@ -54,6 +54,11 @@ unduh `global_cattle_disease_detection_dataset.csv` dari [Kaggle](https://www.ka
 Hasil pada data uji sintetis (200 peternakan yang tidak dipakai melatih): ternak berlevel Rendah, Sedang, Tinggi ternyata sakit 23,3%, 47,6%, dan 65,3%.
 Sedang+Tinggi menangkap 85,1% ternak sakit (precision 54,0%); level Tinggi saja precision 65,3% dan recall 37,5%.
 
+## Data demo
+
+`supabase/seed/demo_herd.sql` mengisi akun pertama dengan kawanan sintetis ±40 ekor (3 generasi), catatan kesehatan, skor risiko, dan riwayat perkawinan (sebagian sekerabat) untuk demo.
+File dihasilkan oleh `node ml/make_demo_seed.mjs` (skor memakai model dan aturan yang sama dengan Edge Function). Jalankan di Supabase SQL Editor setelah mendaftar satu akun. Aman diulang; data ini bisa dihapus lewat Pengaturan > Hapus semua data ternak saya.
+
 ## Yang belum ada
 
 - Uji dengan peternak sungguhan dan data lapangan yang divalidasi dokter hewan.
