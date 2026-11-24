@@ -3,6 +3,8 @@
 Aplikasi web mobile (PWA) untuk mencatat ternak dan mendapat **peringatan dini risiko kesehatan** serta **peringatan perkawinan sekerabat**.
 Proyek Perancangan Produk AI untuk Pertanian (KEB1322), Kelompok 9.
 
+**Demo:** https://ternakku-tau.vercel.app (daftar dengan email Anda; jika email konfirmasi tidak datang, coba lagi beberapa menit kemudian)
+
 > Hasil AI adalah **estimasi**, bukan diagnosis. Model dilatih pada **data sintetis** (Kaggle), jadi angka performa bukan bukti hasil di lapangan.
 
 ## Arsitektur
