@@ -1,0 +1,24 @@
+{
+  "features_num": [
+    "Age_Months",
+    "Parity",
+    "Days_in_Milk",
+    "Body_Condition_Score",
+    "Milk_Yield_L",
+    "Previous_Week_Avg_Yield",
+    "yield_drop_ratio",
+    "vaccine_count",
+    "Feed_Quantity_kg",
+    "Water_Intake_L",
+    "Housing_Score"
+  ],
+  "features_cat": [
+    "Lactation_Stage",
+    "Season",
+    "Management_System"
+  ],
+  "threshold_high_logreg": 0.63050952269564,
+  "threshold_mid": 0.3891175302997054,
+  "best_model": "HistGB",
+  "note": "Dilatih pada data sintetis Kaggle (proxy). Bukan bukti performa lapangan."
+}

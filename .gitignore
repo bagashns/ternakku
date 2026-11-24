@@ -1,0 +1,10 @@
+node_modules/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+.vercel
+DEMO_ACCOUNT.local.md
+
+# data dan model besar tidak masuk repositori
+*.csv
