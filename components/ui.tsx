@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
+import { Icon } from "@/components/icons";
 import type { RiskLevel } from "@/lib/types";
 
 const ICON: Record<RiskLevel, string> = { Rendah: "●", Sedang: "▲", Tinggi: "■" };
@@ -21,12 +22,12 @@ export function TopBar({ title, back }: { title: string; back?: boolean | string
     <header className="topbar">
       {back ? (
         <button className="back" aria-label="Kembali" onClick={() => (typeof back === "string" ? router.push(back) : router.back())}>
-          ←
+          <Icon name="back" size={26} />
         </button>
       ) : null}
       <h1>{title}</h1>
-      <Link href="/home" aria-label="Beranda" style={{ fontSize: 22, minWidth: 44, minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-        🏠
+      <Link href="/home" aria-label="Beranda" style={{ minWidth: 44, minHeight: 44, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+        <Icon name="home" size={24} />
       </Link>
     </header>
   );

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 import { TopBar } from "@/components/ui";
 import { useMatings } from "@/components/hooks";
 
@@ -11,7 +12,7 @@ export default function Perkawinan() {
       <TopBar title="Perkawinan" back="/home" />
       <main className="content">
         <Link href="/perkawinan/baru" className="btn">
-          🧬 Catat perkawinan baru
+          <Icon name="fork" size={20} /> Catat perkawinan baru
         </Link>
         <div className="section-title">Riwayat perkawinan</div>
         {matings.length === 0 && <div className="empty">Belum ada catatan perkawinan.</div>}

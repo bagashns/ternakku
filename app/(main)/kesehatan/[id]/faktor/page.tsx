@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
+import { Icon } from "@/components/icons";
 import { Disclaimer, RiskBadge, TopBar } from "@/components/ui";
 import { useAuth } from "@/components/auth";
 import { useFeedback, useRisk } from "@/components/hooks";
@@ -101,15 +102,21 @@ export default function Faktor() {
           <div className="card">
             {vet.phone ? (
               <a className="btn danger" href={`tel:${vet.phone}`}>
-                📞 Hubungi dokter hewan / penyuluh
+                <Icon name="phone" size={20} /> Hubungi dokter hewan / penyuluh
               </a>
             ) : (
               <Link className="btn danger" href="/pengaturan">
-                📞 Atur nomor dokter hewan / penyuluh
+                <Icon name="phone" size={20} /> Atur nomor dokter hewan / penyuluh
               </Link>
             )}
             <button className="btn secondary" onClick={copy}>
-              {copied ? "✓ Tersalin" : "Salin ringkasan untuk dikirim"}
+              {copied ? (
+                <>
+                  <Icon name="check" size={18} /> Tersalin
+                </>
+              ) : (
+                "Salin ringkasan untuk dikirim"
+              )}
             </button>
           </div>
         )}

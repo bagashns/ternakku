@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/auth";
+import { Logo } from "@/components/icons";
 import { Field } from "@/components/ui";
 import { api } from "@/lib/api";
 
@@ -46,9 +47,7 @@ export default function Login() {
   return (
     <form className="public" onSubmit={submit}>
       <div className="center" style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 24 }}>
-        <div className="splash logo" style={{ minHeight: 0, width: 72, height: 72, fontSize: 42, borderRadius: 18, border: "3px solid var(--green-700)" }} aria-hidden>
-          T
-        </div>
+        <Logo size={72} />
         <h1>{mode === "masuk" ? "Masuk ke TernakKu" : "Daftar TernakKu"}</h1>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { Icon } from "@/components/icons";
 import { ErrorBox, Loading, RiskBadge, TopBar } from "@/components/ui";
 import { useConsent, useHealth, useLivestock, useRisk } from "@/components/hooks";
 import { SEX_LABEL, displayName, formatDate } from "@/lib/helpers";
@@ -78,7 +79,7 @@ export default function TernakDetail() {
             </section>
 
             <Link href={`/kesehatan/${item.id}`} className="btn">
-              {consent.ai ? "🩺 Cek risiko kesehatan" : "📝 Catat kesehatan"}
+              <Icon name={consent.ai ? "pulse" : "clipboard"} size={20} /> {consent.ai ? "Cek risiko kesehatan" : "Catat kesehatan"}
             </Link>
           </>
         )}

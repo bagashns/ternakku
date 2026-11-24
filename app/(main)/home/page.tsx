@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 import { ErrorBox, Loading, RiskBadge, TopBar } from "@/components/ui";
 import { useConsent, useLivestock, useRisk, useSession } from "@/components/hooks";
 import { displayName } from "@/lib/helpers";
@@ -77,13 +78,13 @@ export default function Home() {
 
         <div className="section-title">Pintasan</div>
         <Link href="/kesehatan" className="btn">
-          🩺 Cek risiko kesehatan
+          <Icon name="pulse" size={20} /> Cek risiko kesehatan
         </Link>
         <Link href="/perkawinan/baru" className="btn secondary">
-          🧬 Catat perkawinan
+          <Icon name="fork" size={20} /> Catat perkawinan
         </Link>
         <Link href="/ternak/baru" className="btn secondary">
-          ➕ Tambah ternak
+          <Icon name="plus" size={20} /> Tambah ternak
         </Link>
       </main>
     </>
