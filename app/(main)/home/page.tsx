@@ -39,7 +39,7 @@ export default function Home() {
           <>
             <section className="card">
               <div className="section-title">Skor risiko kesehatan</div>
-              <div className="grid2">
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {(["Tinggi", "Sedang", "Rendah"] as RiskLevel[]).map((lv) => (
                   <Link key={lv} href="/kesehatan" className="row between">
                     <RiskBadge level={lv} />
